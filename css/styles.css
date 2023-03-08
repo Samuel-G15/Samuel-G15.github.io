@@ -1,0 +1,424 @@
+:root {
+    --facebook: #3b5999;
+    --github: #000;
+    --linkedin: #0077B5;
+    --primary-color: hsl(188, 84%, 56%);
+    --text-color: hsl(0, 0%, 31%);
+    --bg-color: hsl(0, 0%, 90%);
+    --bg-card-color: hsl(0, 0%, 98%);
+    --border-radius: 0.4em;
+    --transition: color 0.1s, background-color 0.2s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+}
+
+body.dark {
+    --text-color: hsl(0, 0%, 83%);
+    --bg-color: hsl(0, 0%, 15%);
+    --bg-card-color: hsl(0, 0%, 20%);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    padding: 0 1.5em;
+    background-color: var(--bg-card-color);
+}
+
+.switches {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.toggle-theme_icon {
+    margin-right: 0.5em;
+    width: 20px;
+}
+
+.toggle-theme_text {
+    font-size: .8rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    padding: 0 20px;
+    background: #333;
+    line-height: 50px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2); 
+    transition: .2s;
+    border-radius: 5px;
+}
+
+.menu:hover  a{
+    filter: blur(3px);
+}
+
+.menu a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .4);
+    filter: none;
+}
+
+.menu li .facebook:hover {
+    background: var(--facebook);
+}
+
+.menu li .github:hover {
+    background: var(--github);
+}
+
+.menu li .linkedin:hover {
+    background: var(--linkedin);
+}
+
+.menu li .active:hover {
+    background: var(--active);
+}
+
+.main {
+    display: grid;
+    padding: 2em;
+    gap: 0.65em;
+}
+
+@media screen and (min-width: 720px){
+    .main {
+        grid-template-columns: min-content 1fr;
+    }
+}
+
+.column {
+    display: grid;
+    gap: 0.5em;
+    
+}
+
+@media screen and (min-width: 720px){
+    .column--right {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, min-content);
+    }
+}
+
+.card {
+    padding: 1em;
+    background-color: var(--bg-card-color);
+    border-radius: var(--border-radius);
+}
+
+.card_image-container {
+    min-width: 320px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.card__header {
+    padding: 1em 0;
+}
+
+.card__title {
+    margin: 0;
+    margin-bottom: 2em;
+    font-size: 1.2rem;
+}
+
+.card_subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.card_link {
+    margin-bottom: 0.5em;
+}
+
+.card_text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media screen and (min-width: 760px) {
+    .card--project {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-column: 1 / -1;
+    }  
+}
+
+.skills {
+    padding: 1em 0;
+}
+
+.skills__header {
+    display: flex;
+    justify-content: space-between;
+    width: 175px;
+    margin-left: auto;
+}
+
+.skills_tech {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.skills_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+.skills__bar {
+    width: 175px;
+    height: 8px;
+    background-color: #888;
+    border-radius: var(--border-radius);
+}
+
+.skills_bar{
+    width: var(--w);
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+.html {
+    background-color: var(--primary-color);
+    animation: fillhtml 3s forwards;
+}
+
+.css {
+    background-color: var(--primary-color);
+    animation: fillcss 2s forwards;
+}
+
+.js {
+    background-color: var(--primary-color);
+    animation: filljs 3s forwards;
+}
+
+.python {
+    background-color: var(--primary-color);
+    animation: fillpython 2s forwards;
+}
+
+.bootstrap {
+    background-color: var(--primary-color);
+    animation: fillbootstrap 3s forwards;
+}
+
+.angular {
+    background-color: var(--primary-color);
+    animation: fillangular 2s forwards;
+}
+
+.mysql {
+    background-color: var(--primary-color);
+    animation: fillmysql 3s forwards;
+}
+
+.jquery {
+    background-color: var(--primary-color);
+    animation: filljquery 2s forwards;
+}
+
+.github {
+    background-color: var(--primary-color);
+    animation: fillgithub 3s forwards;
+}
+
+.git {
+    background-color: var(--primary-color);
+    animation: fillgit 2s forwards;
+}
+
+@keyframes fillhtml {
+    0%{width: 0;}
+    100%{width: 85%;}
+}
+
+@keyframes fillcss {
+    0%{width: 0;}
+    100%{width: 70%;}
+}
+
+@keyframes filljs {
+    0%{width: 0;}
+    100%{width: 55%;}
+}
+
+@keyframes fillpython {
+    0%{width: 0;}
+    100%{width: 50%;}
+}
+
+@keyframes fillbootstrap {
+    0%{width: 0;}
+    100%{width: 80%;}
+}
+
+@keyframes fillangular {
+    0%{width: 0;}
+    100%{width: 40%;}
+}
+
+@keyframes fillmysql {
+    0%{width: 0;}
+    100%{width: 60%;}
+}
+
+@keyframes filljquery {
+    0%{width: 0;}
+    100%{width: 65%;}
+}
+
+@keyframes fillgithub {
+    0%{width: 0;}
+    100%{width: 75%;}
+}
+
+@keyframes fillgit {
+    0%{width: 0;}
+    100%{width: 80%;}
+}
+
+.experience {
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.experience_image {
+    max-width: 15%;
+    margin-right: 1em;
+}
+
+.experience_time {
+    font-size: 0.8rem;
+    margin-bottom: 2em;
+}
+
+.experience_job {
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.experience_description {
+    font-size: 0.8rem;
+    margin-bottom: 1.5em;
+}
+
+.project {
+    position: relative;
+}
+
+@media screen and (min-width: 760px) {
+    .project {
+        margin-left: 2em;
+    } 
+}
+
+.project_tags {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0;
+    font-size: 0.6rem;
+    width: 275px;
+}
+
+@media screen and (min-width: 760px) {
+    .project_tags {
+        width: 325px;
+        font-size: 0.8rem;
+    } 
+}
+
+.project_tag {
+    padding: 0.4em 0.8em;
+    margin: 0 5px 0 0;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 225px;
+}
+
+@media screen and (min-width: 760px) {
+    .buttons {
+        position: absolute;
+        bottom: 1em;
+    }
+}
+
+.button {
+    width: 100px;
+    line-height: 2.5;
+    text-align: center;
+    border-radius: var(--border-radius);
+}
+
+.button--primary {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.button--ghost {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.icon {
+    margin-right: 1em;
+}
